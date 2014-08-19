@@ -87,8 +87,17 @@ $ npm install -g bower
 Install Requirements
 ====================
 
+venv
+----
+
+*  Set up virtual environment 
+
+```
+virtualenv --no-site-packages venv
+```
+
 pip
----
+----
 
 * Install back-end packages and dependencies
 
@@ -123,16 +132,17 @@ $ cp ~/projects/chopstix/chopstix/settings/local-template.py ~/projects/chopstix
 * Walk through the settings file and configure it as necessary for your local environment
 
 
+
+
 Build Schema
 ============
 
-* Create a database framework if you don't have one already
+* Create a database framework if you don't have one already.  This is done in the db_create.py script
 
 ```
 $ cd ~/projects/chopstix
-$ python
->>> from chopstix import db
->>> db.create_all()
+$ ./db_create.py
+$ ./db_upgrade.py
 ```
 
 Running Locally
